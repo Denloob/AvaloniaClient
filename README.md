@@ -27,4 +27,4 @@ dotnet run
 
 ## License
 
-[MIT](LICENSE)
+[GPL](LICENSE)
