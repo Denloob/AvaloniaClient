@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Client.ErrorPopup">
+    <Grid Name="errorPopup" IsVisible="False" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Border Background="White" BorderBrush="#909090" BorderThickness="1" CornerRadius="8" BoxShadow="5 5 10 0 DarkGray" MinHeight="120" MinWidth="200" MaxWidth="400">
+            <StackPanel Margin="10,10,10,10" VerticalAlignment="Center" >
+                <TextBlock Text="Error" FontWeight="Bold" FontSize="18" Margin="0,10,0,5" />
+                <TextBlock Name="errorPopupText" FontSize="14" TextWrapping="Wrap" />
+                <DockPanel HorizontalAlignment="Right">
+                    <Button Margin="0,15,10,5" Click="Close">OK</Button>
+                </DockPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

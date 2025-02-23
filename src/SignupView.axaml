@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.SignupView">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" Margin="20">
+            <TextBlock FontSize="40" FontWeight="Bold" HorizontalAlignment="Center">Trivia Client</TextBlock>
+            <TextBlock Margin="15" FontSize="20" HorizontalAlignment="Center">Sign Up </TextBlock>
+            <TextBox Name="usernameInput" Watermark="Username" />
+            <TextBox Name="passwordInput" PasswordChar="*" Watermark="Password" />
+            <TextBox Name="emailInput" Watermark="Email" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox Name="cityInput" Width="100" Margin="5" Watermark="City"/>
+                <TextBox Name="apartmentInput" Width="100" Margin="5" Watermark="דירה"/>
+                <TextBox Name="streetInput" Width="100" Margin="5" Watermark="Street"/>
+                <TextBox Name="phoneInput" Width="100" Margin="5" Watermark="Phone"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Birthdate:" HorizontalAlignment="Center"/>
+                    <DatePicker Name="birthdateInput" Margin="5"/>
+                </StackPanel>
+
+            </StackPanel>
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <TextBlock Margin="0,0,0,5" FontSize="12">Already have an account?</TextBlock>
+                    <Button FontSize="15" Click="LoginButtonHandler" >Login</Button>
+                </StackPanel>
+                <Button Click="SignupButtonHandler" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Svg Path="Assets/Arrow.svg" Width="30" />
+                </Button>
+            </Grid>
+        </StackPanel>
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+            <TextBlock DockPanel.Dock="Left" Margin="5,0,5,0" VerticalAlignment="Center">Port:</TextBlock>
+            <TextBox Name="portInput" Width="100" Watermark="Port">8080</TextBox>
+        </DockPanel>
+        <local:ErrorPopup Name="errorPopup" />
+    </Grid>
+</UserControl>

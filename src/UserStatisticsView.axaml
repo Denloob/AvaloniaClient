@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.UserStatisticsView">
+    <Grid Background="DarkSlateGray">
+        <!-- Title -->
+        <TextBlock Text="User Statistics" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,20"/>
+
+        <!-- Statistics Text -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,60,20,40">
+            <TextBlock Name="statisticsText" Foreground="White" FontSize="16"/>
+        </ScrollViewer>
+
+        <!-- Menu Button -->
+        <Button Click="BackToMenuButtonHandler" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="15">Menu</Button>
+    </Grid>
+</UserControl>

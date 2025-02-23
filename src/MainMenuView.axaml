@@ -1,0 +1,71 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.MainMenuView">
+    <UserControl.Background>
+        <LinearGradientBrush>
+            <GradientStop Offset="0" Color="#42f5ec"/>
+            <GradientStop Offset="0.5" Color="#5442f5"/>
+            <GradientStop Offset="1" Color="#ad42f5"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" Margin="20">
+            <StackPanel Orientation="Horizontal">
+                <Border Background="White" CornerRadius="5" Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="1" Source="Assets\createRoomIcon.png" Width="48" Height="48" HorizontalAlignment="Center" Margin="0,-10,0,0"/>
+                        <TextBlock Grid.Row="3" Text="By pressing this button &#x0a;you will create a new &#x0a;room for players to join" HorizontalAlignment="Center" Margin="10,200,0,0" FontSize="10"/>
+                        <Button Grid.Row="2" Click="createRoomButtonHandler" FontSize="15" Content="Create Room" HorizontalAlignment="Center" Margin="0,120,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Background="White" CornerRadius="5" Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="1" Source="Assets\findGameIcon.png" Width="48" Height="48" HorizontalAlignment="Center" Margin="0,-10,0,0"/>
+                        <TextBlock Grid.Row="3" Text="By pressing this button&#x0a;you will see all&#x0a;active opened rooms" HorizontalAlignment="Center" Margin="10,200,0,0" FontSize="10"/>
+                        <Button Grid.Row="2" Click="joinGameButtonHandler" FontSize="15" HorizontalAlignment="Center" Content="Find room" Margin="0,120,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Background="White" CornerRadius="5" Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="1" Source="Assets\leaderboardIcon.png" Width="48" Height="48" HorizontalAlignment="Center" Margin="0,-10,0,0"/>
+                        <TextBlock Grid.Row="3" Text="By pressing this button&#x0a;you will see the&#x0a;updated leaderboard" HorizontalAlignment="Center" Margin="10,200,0,0" FontSize="10"/>
+                        <Button Grid.Row="2" Click="highScoreButtonHandler" FontSize="15" HorizontalAlignment="Center" Content="LeaderBoard" Margin="0,120,0,0"/>
+                    </Grid>
+                </Border>
+                <Border Background="White" CornerRadius="5" Margin="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="1" Source="Assets\playerStatsIcon.png" Width="48" Height="48" HorizontalAlignment="Center" Margin="0,-10,0,0"/>
+                        <TextBlock Grid.Row="3" Text="By pressing this button&#x0a;you will see your&#x0a;own game statistics" HorizontalAlignment="Center" Margin="10,200,0,0" FontSize="10"/>
+                        <Button Grid.Row="2" Click="userStatisticsButtonHandler" FontSize="15" HorizontalAlignment="Center" Content="My Stats" Margin="0,120,0,0"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+            <Button Click="logoutButtonHandler" DockPanel.Dock="Left" Margin="5,0,5,0" VerticalAlignment="Center" FontSize="15">Logout</Button>
+        </DockPanel>
+        <local:ErrorPopup Name="errorPopup" />
+    </Grid>
+</UserControl>

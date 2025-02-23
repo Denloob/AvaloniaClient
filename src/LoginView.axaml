@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.LoginView">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" Margin="20">
+            <TextBlock FontSize="40" FontWeight="Bold">Trivia Client</TextBlock>
+            <TextBlock Margin="15" FontSize="20" HorizontalAlignment="Center">Login</TextBlock>
+            <TextBox Name="usernameInput" Watermark="Username" />
+            <TextBox Name="passwordInput" PasswordChar="*" Watermark="Password" />
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <TextBlock Margin="0,0,0,5" FontSize="12">No account?</TextBlock>
+                    <Button Click="SignupButtonHandler" FontSize="15">Signup</Button>
+                    <Button Click="AddQuestionHandler" FontSize="15">Add Question</Button>
+                </StackPanel>
+                <Button Click="LoginButtonHandler" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Svg Path="Assets/Arrow.svg" Width="30" />
+                </Button>
+            </Grid>
+        </StackPanel>
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+            <TextBlock DockPanel.Dock="Left" Margin="5,0,5,0" VerticalAlignment="Center">Port:</TextBlock>
+            <TextBox Name="portInput" Width="100" Watermark="Port">8080</TextBox>
+        </DockPanel>
+        <local:ErrorPopup Name="errorPopup" />
+    </Grid>
+</UserControl>

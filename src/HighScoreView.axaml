@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.HighScoreView">
+    <Grid Background="DarkSlateGray">
+        <!-- Title -->
+        <TextBlock Text="Leaderboard" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,20"/>
+
+        <!-- ScrollViewer for the leaderboard -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="20,60,20,40">
+            <ItemsRepeater ItemsSource="{Binding HighScores}">
+                <ItemsRepeater.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="SteelBlue" CornerRadius="5" Margin="0,0,0,10" Padding="10">
+                            <TextBlock Text="{Binding}" Foreground="White" FontSize="18"/>
+                        </Border>
+                    </DataTemplate>
+                </ItemsRepeater.ItemTemplate>
+            </ItemsRepeater>
+        </ScrollViewer>
+
+        <!-- Menu Button -->
+        <Button Click="BackToMenuButtonHandler" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="15">Menu</Button>
+    </Grid>
+</UserControl>

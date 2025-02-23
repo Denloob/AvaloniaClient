@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.JoinRoomView">
+    <Grid>
+        
+        <Grid.Background>
+            <ImageBrush Source="Assets\SpaceBackGroundPicture2.png" Stretch="UniformToFill" />
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+
+        <!-- Center section: Room list -->
+        <ListBox Grid.Row="1" SelectionMode="Single" ItemsSource="{Binding Rooms}" Margin="10" Background="Transparent" HorizontalAlignment="Center" SelectedIndex="{Binding SelectedIndex}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#AA000000" CornerRadius="10" Margin="5,-5,5,5" Padding="10" Width="600" Height="100">
+                        <DockPanel>
+                            <!-- Image on the left side, positioned at the left center corner -->
+                            <Image Source="Assets\serverIcon.png" Width="50" Height="50" Margin="5,0,0,0" VerticalAlignment="Center"/>
+
+                            <!-- StackPanel for the text content, positioned to the right of the image -->
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="White" FontSize="18" Margin="20,5,0,10" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock Text="  Questions number: " FontWeight="Bold" Foreground="White" FontSize="14" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding NumOfQuestionsInGame}" Foreground="White" FontSize="14" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="  Time for question: " FontWeight="Bold" Foreground="White" FontSize="14" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding TimePerQuestion}" Foreground="White" FontSize="14" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                <TextBlock Text="{Binding PlayerCount}" Foreground="White" FontWeight="Bold" VerticalAlignment="Top"/>
+                                <TextBlock Text="/" Foreground="White" FontWeight="Bold"  VerticalAlignment="Top"/>
+                                <TextBlock Text="{Binding MaxPlayers}" Foreground="White" FontWeight="Bold"  VerticalAlignment="Top"/>
+                                <Ellipse Width="20" Height="20" Margin="5,5,5,5" Fill="Green" VerticalAlignment="Top"/>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <Button Grid.Row="2" Click="BackToMenuButtonHandler" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" FontSize="15">Menu</Button>
+
+        <local:ErrorPopup Name="errorPopup" Grid.RowSpan="3" />
+    </Grid>
+</UserControl>

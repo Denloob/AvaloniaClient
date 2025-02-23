@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.CreateRoomView">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10" Margin="20">
+            <TextBlock FontSize="40" FontWeight="Bold">Trivia Client</TextBlock>
+            <TextBlock Margin="15" FontSize="20" HorizontalAlignment="Center">Create Room</TextBlock>
+            <TextBox Name="roomNameInput" Watermark="Room Name" />
+            <TextBox Name="timePerQuestionInput" Watermark="Time Per Question" />
+            <TextBox Name="amountOfPlayersInput" Watermark="Amount of Players" />
+            <TextBox Name="questionCountInput" Watermark="Question Count" />
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <TextBlock Margin="0,0,0,5" FontSize="12">Go back to main menu?</TextBlock>
+                    <Button Click="BackToMenuButtonHandler" FontSize="15">Menu</Button>
+                </StackPanel>
+                <Button Click="CreateRoomButtonHandler" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Svg Path="Assets\Arrow.svg" Width="30" />
+                </Button>
+            </Grid>
+        </StackPanel>
+        <DockPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">
+        </DockPanel>
+        <local:ErrorPopup Name="errorPopup" />
+    </Grid>
+</UserControl>

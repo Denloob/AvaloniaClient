@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Client"
+             x:Class="Client.GameView">
+    <UserControl.Background>
+        <LinearGradientBrush>
+            <GradientStop Offset="0" Color="#FF512F"/>
+            <GradientStop Offset="1" Color="#F09819"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Background="White" Padding="40" Margin="-100,0,0,0" Width="800" HorizontalAlignment="Center">
+            <TextBlock Name="currentQuestion" FontSize="18" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        </Border>
+
+        <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Click="SubmitAnswerButtonHandler" Name="possibleAnswer1" Grid.Row="0" Grid.Column="0" Margin="50,0" Padding="20" Width="350" />
+            <Button Click="SubmitAnswerButtonHandler" Name="possibleAnswer2" Grid.Row="0" Grid.Column="1" Margin="20" Padding="20" Width="350"/>
+            <Button Click="SubmitAnswerButtonHandler" Name="possibleAnswer3" Grid.Row="1" Grid.Column="0" Margin="50,0" Padding="20" Width="350"/>
+            <Button Click="SubmitAnswerButtonHandler" Name="possibleAnswer4" Grid.Row="1" Grid.Column="1" Margin="20" Padding="20" Width="350"/>
+        </Grid>
+
+        <Button Click="LeaveGameButtonHandler" Content="Leave" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-80,0,0,0" Padding="20"/>
+
+        <Grid Name="answerDisplay" IsVisible="False" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="2" Margin="-80 , 80 , 0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="answerDisplayColor" Fill="Green" />
+            <TextBlock Name="answerDisplayText" />
+        </Grid>
+    </Grid>
+</UserControl>
